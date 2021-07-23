@@ -1,0 +1,7 @@
+*.sh
+*.txt
+/checkpoints
+/.idea/
+/dataset
+/result
+/__pycache__
