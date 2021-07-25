@@ -72,9 +72,3 @@ My environment is based on
 
 # 4.predict your model
 * predict model: python3 predict.py modelName classesName
-
-# 5.result of mnist dataset(number 0~9)
-  ![Image text](https://github.com/tslgithub/image_class/blob/master/resultMNIST.png)
-
-### Any Questions???
-Author email: mymailwith163@163.com
