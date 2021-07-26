@@ -37,16 +37,14 @@ class DataSet(object):
         else:
             print("the data is Mci")
             if (utils.isWondows()):
-                # path1 = r"E:/mcitrans/mcifor_c/mciall/" + str(config.config.case)
-                # path2 = r"E:/jsc_for_nc/NC/" + str(config.config.case)
-                path1 = r"E:/mcitrans/mcifor_c/mciall/ori"
-                path2 = r"E:/jsc_for_nc/NC/ori"
+                path1 = r"E:/mcitrans/mcifor_c/mciall/" + str(config.config.case)
+                path2 = r"E:/jsc_for_nc/NC/" + str(config.config.case)
+                # path1 = r"E:/mcitrans/mcifor_c/mciall/ori"
+                # path2 = r"E:/jsc_for_nc/NC/ori"
             else:
                 path1 = r"./dataset/mcifor_c/trans/" + str(config.config.case)
                 path2 = r"./dataset/mcifor_c/untrans/" + str(config.config.case)
 
-        # path1 = r"D:\work\AD_V3\image_class/" + str(config.config.case) + "/AD"
-        # path2 = r"D:\work\AD_V3\image_class/" + str(config.config.case) + "/NC"
         if(config.config.model_name=="ResNet3D"):
             imgs, labels = read_files(path1,path2,config.config.nums0fmaxdata)
             counter = 2
@@ -57,11 +55,11 @@ class DataSet(object):
             counter = 2
 
         # readList 参数：maskpath是残差路径，下面应当有两个文件夹，与path2对应
-        # 例： path1
-        #        |AD
+        # 例： AD
+        #        |ori
         #           |nii
         #           |nii
-        #        |NC
+        #        |residual
         #           |nii
         #           |nii
         # else:
@@ -69,21 +67,6 @@ class DataSet(object):
         #     counter = 2
 
 
-
-        #将数据集打乱随机分组
-
-
-        # X_train,X_test,self.y_train,self.y_test = train_test_split(imgs,labels,test_size=0.25,random_state=15)#random_state=random.randint(0, 100)
-        # enhancedata(X_train,self.y_train)
-
-        #重新格式化和标准化
-        # 本案例是基于thano的，如果基于tensorflow的backend需要进行修改
-        # X_train = X_train.reshape(X_train.shape[0], 256, 256, 3)
-        # X_test = X_test.reshape(X_test.shape[0], 256, 256,3)
-
-
-        # X_train = X_train.astype('float32')/255
-        # X_test = X_test.astype('float32')/255
         print(X_train[1])
 
         #将labels转成 binary class matrices

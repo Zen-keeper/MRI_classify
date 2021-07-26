@@ -71,9 +71,6 @@ class Train(Build_model):
         pred = model.predict(np.array(X_test))
         accuracy, sensitivity, specificity ,auc,FCORE,MCC = utils.calculate_metric(y_test, pred)
 
-        # self.file.write("accuracy:" + str(k) + str(accuracy) + "\n")
-        # self.file.write("sensitivity:" + str(k) + str(sensitivity) + "\n")
-        # self.file.write("specificity:" + str(k) + str(specificity) + "\n")
         self.sheet.write(k, 8, str(accuracy))
         self.sheet.write(k, 9, str(sensitivity))
         self.sheet.write(k, 10, str(specificity))
