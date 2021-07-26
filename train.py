@@ -229,7 +229,7 @@ class Train(Build_model):
             else:
                 X_test.append(DataSet.read_single(X_test_p[i], "path"))
                 # X_test.append(DataSet.read_singleflip(X_test_p[i], "path"))
-                # X_test.append(DataSet.read_singleflip(X_test_p[i], "path",1))
+                X_test.append(DataSet.read_singleflip(X_test_p[i], "path",1))
                 # YY_test.append(y_test[i])
                 # YY_test.append(y_test[i])
                 YY_test.append(y_test[i])

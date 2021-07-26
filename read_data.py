@@ -355,7 +355,7 @@ def MultiReadList(pathp,pathnegative,numofdata=1000):
 import gaussianadded
 
 def read_combineT(input,maskT,parmtype):
-    # 主要作用是将三维数据转为二维切片
+    # combineT模式下将三维数据转为二维切片
     if("path"==parmtype):
         img = nib.load(input).get_data().astype(np.float32)
         maskimg = nib.load(maskT).get_data().astype(np.float32)
@@ -450,15 +450,10 @@ def read_single(input,parmtype):
     # plt.waitforbuttonpress()
     return np.array(img_full)
 def read_singleflip(input,parmtype,flipdim = 0):
-    # 主要作用是将三维数据转为二维切片
+    # 主要作用是将三维数据转为二维切片，并进行数据增强，包括翻转和加噪声
     if("path"==parmtype):
         img = nib.load(input).get_data().astype(np.float32)
         img[img < 0] = 0
-        # 归一化
-        # img_fdata_flat = img.flatten()
-        # img_fdata_flat = (img_fdata_flat - np.min(img_fdata_flat)) / (max(img_fdata_flat) - min(img_fdata_flat))
-        # img = np.reshape(img_fdata_flat, img.shape)
-        # del img_fdata_flat
     else:
         img = input
 
@@ -494,7 +489,7 @@ def read_singleflip(input,parmtype,flipdim = 0):
 
     return np.array(img_full)
 def read_singleflip_combineT(input,maskT,flipdim = 0):
-    # 主要作用是将三维数据转为二维切片
+    # combineT模式下数据增强
 
     img = nib.load(input).get_data().astype(np.float32)
     img[img < 0] = 0
