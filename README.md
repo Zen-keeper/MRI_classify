@@ -21,22 +21,6 @@
 * TSL16
 
 
-## train or test dataset
-
-
-####  classes name contained in folder name
-__"training or testing dataset folder is:"__
-
-/path/classes1/cat*.jpg,
-
-/path/classes2/dog*.jpg,
-
-/path/classes3/people*.jpg,
-
-/path/classes4/*.jpg,
-
-
-
 
 * Attentions ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !
 * classes name must be contained in folder name 
@@ -63,11 +47,11 @@ My environment is based on
 * choose model and change parameter in config.py
 
 # 2.train or test  dataset prepare
-* python3 mk_class_idx.py
+* python3 train.py
 
 # 3.train your model
-* __Train sigle model :__  python3 train.py modelName
-* __Train All model :__ run " __sh trainAll.sh__ " to train all model (__in ubuntu__)
+* __Train sigle model :__  python3 train.py modelName  (make sure the code use the args)
+  check the input path and put your data in right place
 * __Tensorboard :__ take LeNet as example, run " __tensorboard --logdir=./checkpoints/LeNet__ " to watch training with tensorboard
 
 # 4.predict your model
